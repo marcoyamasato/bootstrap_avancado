@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./lib/bootstrap.min.css">
+
+    <style>
+        .container{
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <h5>
+                Toast é um aviso               
+            </h5>
+
+            <button type="button" class="btn btn-warning" id="btn-checar-emails">Caixa de entrada</button>
+
+        </div>
+    </header>
+
+
+    <div class="toast-container">
+        <div class="toast" id="toast-principal2">
+            <header class="toast-header">
+                Importante
+            </header>
+            <div class="toast-body">
+                Você tem 10 e-mails não lidos
+            </div>
+            <div>
+                <button type="button" class="btn btn-primary" data-bs-dismiss="toast">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="toast-container position-fixed bottom-0 end-0 p-3">
+        <div class="toast" id="toast-principal">
+            <header class="toast-header">
+                Importante
+            </header>
+            <div class="toast-body">
+                Você tem 10 e-mails não lidos
+            </div>
+            <div class="mt-2 p-2 border-top">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="toast">Fechar</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="./lib/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const botao = document.getElementById('btn-checar-emails')
+        const mensagem = document.getElementById('toast-principal')
+        const mensagem2 = document.getElementById('toast-principal2')
+
+        if (botao){
+            botao.addEventListener('click', function(){
+                const toast = new bootstrap.Toast(mensagem);
+                const toast2 = new bootstrap.Toast(mensagem2);
+                toast.show();
+                toast2.show();
+            })
+        }
+    </script>
+</body>
+</html>

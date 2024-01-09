@@ -1,0 +1,50 @@
+.artigos-grid{
+    display: grid;
+    grid-template-columns: repeat(3, 33%);
+}
+
+article{
+    justify-content: space-between;
+    margin: 10px auto;
+}
+
+.card-img-overlay{
+    background-color: rgba(58, 56, 56, 0.8);
+    font-weight: bold;
+    color: white;
+}
+
+
+
+#grid-section .card{
+    height: 100%;
+    width: 100%;
+}
+
+#card1{
+    width: 100%;
+}
+
+#header{
+    position: sticky; /*Isso que faz com que o cabeçalho fique congelado e acompanhe a rolagem*/
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+
+@media screen and (max-width: 767px){ /*Tela de celular*/
+    .artigos-grid{
+        grid-template-columns: repeat(1, 99%);
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px){
+    .artigos-grid{
+        grid-template-columns: repeat(2, 49%);
+    }
+}
